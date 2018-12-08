@@ -1,17 +1,17 @@
-@(title: String)(content: Html)(implicit messagesProvider: MessagesProvider, flash: Flash, request: RequestHeader)
+@(title: String, currentUserOpt: Option[User])(content: Html)(implicit messagesProvider: MessagesProvider, flash: Flash, request: RequestHeader)
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>@title - MonoList</title>
-  <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("favicon.ico")">
+  <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.ico")">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
 </head>
 <body>
-  @common.navbar()
+  @common.navbar(currentUserOpt)
   <div class="container">
     @common.messages()
     @content
