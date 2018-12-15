@@ -18,7 +18,7 @@ avbar-collapse-1" aria-expanded="false">
         <ul class="nav navbar-nav navbar-right">
           @if(currentUserOpt.isDefined) {
             <li>
-              <a href="#">
+              <a href="@routes.ItemsController.index(None)">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 @Messages("AddItem")
               </a>
@@ -26,9 +26,9 @@ avbar-collapse-1" aria-expanded="false">
 
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                 <span class="gravatar">
-                                     <img src="@common.gravatarUrl(currentUserOpt.get.email)?s=20&amp;r=g&amp;d=identicon&amp;d=mm" alt="" class="img-circle">
-                                 </span>
+                <span class="gravatar">
+                  <img src="@common.gravatarUrl(currentUserOpt.get.email)?s=20&amp;r=g&amp;d=identicon&amp;d=mm" alt="" class="img-circle">
+                </span>
                 @currentUserOpt.get.name
                 <span class="caret"></span>
               </a>
